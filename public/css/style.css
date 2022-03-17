@@ -1798,6 +1798,10 @@ a#myTabDrop1 {
     border: 1px solid #999;
     margin-bottom: 2em;
 }
+.form-auth {
+    margin: 70px 100px;
+}
+
 .form-w3agile h3{
     color: #029241;
     font-size: 2.5em;

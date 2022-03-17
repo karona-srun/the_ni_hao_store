@@ -8,11 +8,11 @@
         <div class="clearfix"> </div>
     </div>
 </div>
-<div class="container">
+<div class="container form-auth">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+                <div class="card-header mb-5"><h2>{{ __('Reset Password') }}</h2></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">

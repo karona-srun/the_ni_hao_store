@@ -8,11 +8,11 @@
         <div class="clearfix"> </div>
     </div>
 </div>
-<div class="container">
+<div class="container form-auth">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+                <div class="card-header mb-5"><h2>{{ __('Verify Your Email Address') }}</h2></div>
 
                 <div class="card-body">
                     @if (session('resent'))

@@ -182,7 +182,7 @@
                         </a>
                         <a href="#" class="dropdown-item">
                             <div class="media">
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-sm"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-sm"><i class="fas fa-sign-out-alt"></i> ចាកចេញ</button>
                             </div>
                         </a>
                     </div>
@@ -195,20 +195,20 @@
             <div class="modal-dialog modal-sm">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h4 class="modal-title">Confirm</h4>
+                  <h4 class="modal-title">ជូនដំណឹង</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>One fine body&hellip;</p>
+                  <p>តើអ្នកចង់ចាកចេញពីកម្មវិធី?</p>
                 </div>
                 <div class="modal-footer justify-content-between">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">បោះបង់</button>
                   <a href="{{ route('logout') }}" class="btn btn-danger"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                       <i class="fas fa-sign-out-alt"></i> ចាកចេញ
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -246,15 +246,15 @@
                     <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-legacy" data-widget="treeview"
                         role="menu" data-accordion="false">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('dashboard') }}" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     ផ្ទាំងទំព័រដើម
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-boxes"></i>
                                 <p>
                                     ពត័មានផលិតផល
@@ -263,13 +263,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/UI/general.html" class="nav-link active">
+                                    <a href="{{ url('products') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ផលិតផល</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/icons.html" class="nav-link">
+                                    <a href="{{ url('product-categories') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ប្រភេទផលិតផល</p>
                                     </a>
@@ -286,13 +286,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="{{ url('users') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>អ្នកប្រើប្រាស់</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/forms/advanced.html" class="nav-link">
+                                    <a href="{{ url('roles') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>តួនាទី</p>
                                     </a>
@@ -335,6 +335,19 @@
     <script src="{{ asset('backend/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
     <script>
         $.widget.bridge('uibutton', $.ui.button)
+
+        $(document).ready(function () {
+            var url = window.location;
+            
+            $('ul.nav-sidebar a').filter(function() {
+                return this.href == url;
+            }).addClass('active');
+            
+            $('ul.nav-treeview a').filter(function() {
+                return this.href == url;
+            }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
+        });
+
     </script>
     <script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('backend/plugins/chart.js/Chart.min.js') }}"></script>
