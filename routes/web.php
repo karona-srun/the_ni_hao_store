@@ -25,7 +25,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
-Route::resource('products', ProductController::class);
-Route::resource('product-categories', ProductCategoryController::class);
-Route::resource('users', UsersController::class);
-Route::resource('roles', RolesController::class);
+Route::resource('/products', ProductController::class);
+Route::resource('/product-categories', ProductCategoryController::class);
+Route::resource('/users', UsersController::class);
+Route::resource('/roles', RolesController::class);

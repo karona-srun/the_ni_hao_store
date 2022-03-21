@@ -35,7 +35,11 @@
                                 <tr>
                                     <td>1</td>
                                     <td>John Doe</td>
-                                    <td>Images </td>
+                                    <td>
+                                        <div class="col-12 product-image-thumbs product-image-thumb-cus">
+                                            <div class="product-image-thumb active"><img src="{{ asset('backend/dist/img/prod-1.jpg') }}" alt="Product Image"></div>
+                                          </div>
+                                    </td>
                                     <td>12</td>
                                     <td><span class="badge badge-success">បានអនុញ្ញាត</span></td>
                                     <td>
