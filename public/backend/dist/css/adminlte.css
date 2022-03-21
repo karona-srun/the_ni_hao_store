@@ -35081,6 +35081,9 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   height: auto;
   width: 100%;
 }
+.product-image-thumb-cus{
+  margin-top: 0rem !important;
+}
 
 .product-image-thumbs {
   -ms-flex-align: stretch;
